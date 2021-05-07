@@ -63,7 +63,9 @@
                 sound.setLoop(true);
                 sound.setVolume(0.5);
                 //
-                getAudioContext().resume();
+                 if (index.context.state !== 'running') {
+                index.context.resume();
+    }
                 sound.play();
             });
             //--------------------------------------------------------------------------
